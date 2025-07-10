@@ -1,0 +1,284 @@
+/* Color palette */
+:root {
+  --primary-color: #4C35FB;
+  --secondary-color: #EFF5FF;
+  --text-primary: #18125B;
+  --text-secondary: #96A9FF;
+  --text-tertiary: #B2B0CB;
+  --white: #ffffff;
+  --light-border: #e0e0e0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background-color: var(--secondary-color);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--white);
+  padding: 20px 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+a{
+    text-decoration: none;
+}
+
+.solgan {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.navOption ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.navOption li {
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.navOption li:hover {
+  color: var(--primary-color);
+}
+
+/* Main layout */
+main {
+  padding: 40px;
+}
+
+main .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+main .col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Placeholder blocks */
+main .row .col .row,
+main .row .row {
+  background-color: var(--white);
+  border: 1px solid var(--light-border);
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 18px;
+  color: var(--text-tertiary);
+  min-height: 120px;
+  box-shadow: 0 4px 8px rgba(76, 53, 251, 0.05);
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+form label {
+  font-weight: 500;
+  color: var(--text-color-primary);
+}
+
+form input,
+form select {
+  padding: 10px 12px;
+  border: 1px solid var(--light-border);
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+
+form button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #3726c7;
+}
+
+main > div > button {
+  margin-top: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+main > div > button:hover {
+  background-color: #3726c7;
+}
+
+.table{
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(76, 53, 251, 0.1);
+}
+
+.table thead {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.table th {
+  padding: 14px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.table tbody tr {
+  border-bottom: 1px solid var(--light-border);
+}
+
+.table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.table td {
+  padding: 12px;
+  font-size: 14px;
+  color: var(--text-color-primary);
+}
+
+.table td button {
+  margin-right: 6px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.table td button:first-child {
+  background-color: #6251fd;
+  color: white;
+}
+
+.table td button:first-child:hover {
+  background-color: var(--primary-color);
+}
+
+.table td button:last-child {
+  background-color: #ff4d4f;
+  color: white;
+}
+
+.table td button:last-child:hover {
+  background-color: #cc393b;
+}
+
+.big{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+
+.add-btn {
+  margin-top: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  form input,
+  form select,
+  form button {
+    width: 100%;
+  }
+
+  .table thead {
+    display: none;
+  }
+
+  .table tbody tr {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-bottom: 1px solid var(--light-border);
+  }
+
+  .table tbody td {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+  }
+
+  .table tbody td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--text-color-tertiary);
+    min-width: 110px;
+  }
+}
+
+
+
+/* Responsive design */
+@media (max-width: 900px) {
+  main .row {
+    flex-direction: column;
+  }
+
+  .navOption ul {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-end;
+  }
+}

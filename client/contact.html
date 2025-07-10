@@ -1,0 +1,195 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="solgan">
+            OutHub-Reach
+        </div>
+        <div class="navOption">
+            <ul>
+                <a href="./index.html">
+                    <li>
+                        Home
+                    </li>
+                </a>
+                <a href="./contact.html">
+                    <li>
+                        Contacts
+                    </li>
+                </a>
+                <a href="./message.html">
+                    <li>
+                        Message Templates
+                    </li>
+                </a>
+                <a href="./campaign.html">
+                    <li>
+                        Campaign
+                    </li>
+                </a>
+                <a href="../auth/signin.html">
+                    <li>
+                        Logout
+                    </li>
+
+                </a>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="big">Contact Page</div>
+        <div>
+            <form action="POST">
+                <label for="search">Search for records</label>
+                <input type="text" name="" id="search">
+                <select name="" id="options">
+                    <option value="Name">Name</option>
+                    <option value="Tags">Tags</option>
+                    <option value="Phone">Phone</option>
+                    <option value="Email">Email</option>
+                    <option value="Job Title">Job Title</option>
+                    <option value="Workspace">Workspace</option>
+                </select>
+                <button type="submit">
+                    Search
+                </button>
+            </form>
+            <button>Add +</button>
+        </div>
+        <table id="contact-table" class="table">
+            <thead>
+                <th>Company</th>
+                <th>Names</th>
+                <th>Tags </th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Job Title</th>
+                <th>Workspace</th>
+                <th>isConverted</th>
+                <th>Actions</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Acme Corp</td>
+                    <td>Jane Doe</td>
+                    <td>Marketing, Lead</td>
+                    <td>+1 (555) 123-4567</td>
+                    <td>jane.doe@acme.com</td>
+                    <td>Marketing Manager</td>
+                    <td>North America Sales</td>
+                    <td>Yes</td>
+                    <td> <button>Edit</button><button>Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Globex Inc</td>
+                    <td>John Smith</td>
+                    <td>Sales</td>
+                    <td>+1 (555) 987-6543</td>
+                    <td>john.smith@globex.com</td>
+                    <td>Sales Executive</td>
+                    <td>Europe Outreach</td>
+                    <td>No</td>
+                    <td> <button>Edit</button><button>Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Initech</td>
+                    <td>Alice Johnson</td>
+                    <td>Lead, Priority</td>
+                    <td>+1 (555) 555-1122</td>
+                    <td>alice.j@initech.com</td>
+                    <td>Product Manager</td>
+                    <td>Product Launch</td>
+                    <td>Yes</td>
+                    <td> <button>Edit</button><button>Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Hooli</td>
+                    <td>Bob Lee</td>
+                    <td>Engineering</td>
+                    <td>+1 (555) 444-2233</td>
+                    <td>bob.lee@hooli.com</td>
+                    <td>DevOps Engineer</td>
+                    <td>Engineering Hub</td>
+                    <td>No</td>
+                    <td> <button>Edit</button><button>Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Vandelay Industries</td>
+                    <td>Elaine Benes</td>
+                    <td>Follow-up, Design</td>
+                    <td>+1 (555) 333-9988</td>
+                    <td>elaine@vandelay.com</td>
+                    <td>Creative Director</td>
+                    <td>Design Team</td>
+                    <td>Yes</td>
+                    <td> <button>Edit</button><button>Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Stark Industries</td>
+                    <td>Tony Stark</td>
+                    <td>VIP, Investor</td>
+                    <td>+1 (555) 000-2020</td>
+                    <td>tony@starkindustries.com</td>
+                    <td>CEO</td>
+                    <td>Executive Circle</td>
+                    <td>Yes</td>
+                    <td> <button>Edit</button><button>Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Wayne Enterprises</td>
+                    <td>Bruce Wayne</td>
+                    <td>High Priority</td>
+                    <td>+1 (555) 101-3030</td>
+                    <td>bruce@wayneenterprises.com</td>
+                    <td>Chairman</td>
+                    <td>Investor Relations</td>
+                    <td>No</td>
+                    <td> <button>Edit</button><button>Delete</button></td>
+
+                </tr>
+                <tr>
+                    <td>Wonka Industries</td>
+                    <td>Willy Wonka</td>
+                    <td>Prospect</td>
+                    <td>+1 (555) 999-8888</td>
+                    <td>willy@wonka.com</td>
+                    <td>Product Innovator</td>
+                    <td>Product Team</td>
+                    <td>No</td>
+                    <td> <button>Edit</button><button>Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Pied Piper</td>
+                    <td>Richard Hendricks</td>
+                    <td>Startup, Tech</td>
+                    <td>+1 (555) 888-7777</td>
+                    <td>richard@piedpiper.com</td>
+                    <td>Founder & CTO</td>
+                    <td>Tech Outreach</td>
+                    <td>Yes</td>
+                    <td> <button>Edit</button><button>Delete</button></td>
+                </tr>
+                <tr>
+                    <td>Cyberdyne Systems</td>
+                    <td>Sarah Connor</td>
+                    <td>Security, Follow-up</td>
+                    <td>+1 (555) 666-1212</td>
+                    <td>sarah.connor@cyberdyne.com</td>
+                    <td>Security Analyst</td>
+                    <td>Compliance Team</td>
+                    <td>No</td>
+                    <td> <button>Edit</button><button>Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+
+</html>

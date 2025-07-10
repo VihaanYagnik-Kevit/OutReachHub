@@ -1,0 +1,138 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message-Template</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="solgan">
+            OutHub-Reach
+        </div>
+        <div class="navOption">
+            <ul>
+                <a href="./index.html">
+                    <li>
+                        Home
+                    </li>
+                </a>
+                <a href="./contact.html">
+                    <li>
+                        Contacts
+                    </li>
+                </a>
+                <a href="./message.html">
+                    <li>
+                        Message Templates
+                    </li>
+                </a>
+                <a href="./campaign.html">
+                    <li>
+                        Campaign
+                    </li>
+                </a>
+                <a href="../auth/signin.html">
+                    <li>
+                        Logout
+                    </li>
+
+                </a>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="big">Message Module</div>
+        <form action="POST">
+            <label for="search">Search for records</label>
+            <input type="text" name="" id="search">
+            <select name="" id="options">
+                <option value="Name">Name</option>
+                <option value="Type">Type</option>
+                <option value="Workspace">Worksapce</option>
+                <option value="Tags">Tags</option>
+            </select>
+            <button type="submit">
+                Search
+            </button>
+        </form>
+        <button class="add-btn">Add +</button>
+        </div>
+        <table id="message-table" class="table">
+            <thead>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Content</th>
+                <th>Image_url</th>
+                <th>Tags</th>
+                <th>Workspace</th>
+                <th>Actions</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Welcome Email</td>
+                    <td>text</td>
+                    <td>Hello {{name}}, welcome to our platform!</td>
+                    <td></td>
+                    <td>onboarding, welcome</td>
+                    <td>North America Sales</td>
+                    <td>
+                        <button>Edit</button>
+                        <button>Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Promo Blast</td>
+                    <td>text_image</td>
+                    <td>Don’t miss our limited-time offer!</td>
+                    <td>https://cdn.example.com/images/promo1.png</td>
+                    <td>promo, sale</td>
+                    <td>Marketing Team</td>
+                    <td>
+                        <button>Edit</button>
+                        <button>Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Re-engagement</td>
+                    <td>text</td>
+                    <td>We haven’t seen you in a while. Here’s 10% off!</td>
+                    <td></td>
+                    <td>inactive, discount</td>
+                    <td>Europe Outreach</td>
+                    <td>
+                        <button>Edit</button>
+                        <button>Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>New Feature Alert</td>
+                    <td>text_image</td>
+                    <td>Introducing SmartDash: your AI-powered dashboard.</td>
+                    <td>https://cdn.example.com/images/smartdash.png</td>
+                    <td>features, update</td>
+                    <td>Product Launch</td>
+                    <td>
+                        <button>Edit</button>
+                        <button>Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Follow-up Reminder</td>
+                    <td>text</td>
+                    <td>Just checking in — did you see our last email?</td>
+                    <td></td>
+                    <td>follow-up</td>
+                    <td>Customer Success</td>
+                    <td>
+                        <button>Edit</button>
+                        <button>Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>

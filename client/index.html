@@ -9,37 +9,19 @@
 
 <body>
     <nav>
-        <div class="solgan">
-            OutReachHub
-        </div>
-        <div class="navOption">
-            <ul>
-                <a href="./index.html">
-                    <li>
-                        Home
-                    </li>
-                </a>
-                <a href="./contact.html">
-                    <li>
-                        Contacts
-                    </li>
-                </a>
-                <a href="./message.html">
-                    <li>
-                        Message Templates
-                    </li>
-                </a>
-                <a href="./campaign.html">
-                    <li>
-                        Campaign
-                    </li>
-                </a>
-                <a href="../auth/signin.html">
-                    <li>
-                        Logout
-                    </li>
+        <div class="solgan">OutReachHub</div>
 
-                </a>
+        <div class="hamburger" id="hamburger">
+            &#9776;
+        </div>
+
+        <div class="navOption" id="navMenu">
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./contact.html">Contacts</a></li>
+                <li><a href="./message.html">Message Templates</a></li>
+                <li><a href="./campaign.html">Campaign</a></li>
+                <li><a href="../auth/signin.html">Logout</a></li>
             </ul>
         </div>
     </nav>
@@ -47,31 +29,106 @@
     <main>
         <div class="row">
             <div class="col">
-                <div class="row">
-                    Catchy photo
-                </div>
-                <div class="row">
-                    profit graph
-                </div>
-                <div class="row">
-                    another catchy photo
-                </div>
+                <img src="../assets/WallpaperSky.jpeg" class="ocean" alt="">
+
+                <img src="../assets/graph-1.png" class="ocean" alt="">
+
+                <img src="../assets/graph-3.png" class="ocean-lg" alt="">
+
             </div>
             <div class="col">
+                <img src="../assets/graph-2.png" class="graph" alt="">
                 <div class="row">
-                    huge graph about Campaigns
-                </div>
-                <div class="row">
-                    <div class="col">
-                        top 5 capaign with contact
+                    <div class="ocean-md">
+                        <table id="campaign-table" class="table">
+                            <thead>
+                                <tr>
+                                    <th>Campaign Name</th>
+                                    <th>Status</th>
+                                    <th>Target Tags</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="Campaign Name">Q3 Lead Nurture</td>
+                                    <td data-label="Status">Active</td>
+                                    <td data-label="Target Tags">Marketing, Lead</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Campaign Name">Summer Promo</td>
+                                    <td data-label="Status">Draft</td>
+                                    <td data-label="Target Tags">Promo, VIP</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Campaign Name">Year-End Followup</td>
+                                    <td data-label="Status">Completed</td>
+                                    <td data-label="Target Tags">Follow-up, Priority</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Campaign Name">Summer Promo</td>
+                                    <td data-label="Status">Draft</td>
+                                    <td data-label="Target Tags">Promo, VIP</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Campaign Name">Year-End Followup</td>
+                                    <td data-label="Status">Completed</td>
+                                    <td data-label="Target Tags">Follow-up, Priority</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <div class="col">
-                        piegraph of ppl converted
+                    <div class="gutter" style="width: 4rem;"></div>
+                    <div class="ocean-md">
+                        <table id="campaign-table" class="table">
+                            <thead>
+                                <tr>
+                                    <th>Campaign Name</th>
+                                    <th>Status</th>
+                                    <th>Target Tags</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="Campaign Name">Q3 Lead Nurture</td>
+                                    <td data-label="Status">Active</td>
+                                    <td data-label="Target Tags">Marketing, Lead</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Campaign Name">Summer Promo</td>
+                                    <td data-label="Status">Draft</td>
+                                    <td data-label="Target Tags">Promo, VIP</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Campaign Name">Year-End Followup</td>
+                                    <td data-label="Status">Completed</td>
+                                    <td data-label="Target Tags">Follow-up, Priority</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Campaign Name">Summer Promo</td>
+                                    <td data-label="Status">Draft</td>
+                                    <td data-label="Target Tags">Promo, VIP</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Campaign Name">Year-End Followup</td>
+                                    <td data-label="Status">Completed</td>
+                                    <td data-label="Target Tags">Follow-up, Priority</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </main>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+    </script>
+
 </body>
 
 </html>

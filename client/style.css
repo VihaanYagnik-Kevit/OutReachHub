@@ -30,10 +30,12 @@ nav {
   background-color: var(--white);
   padding: 20px 40px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: relative;
 }
 
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .solgan {
@@ -59,38 +61,65 @@ a{
   color: var(--primary-color);
 }
 
+/* Hamburger styles */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
 /* Main layout */
-main {
-  padding: 40px;
+
+main{
+  padding : 40px 200px;
 }
 
-main .row {
+main .row{
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin-bottom: 30px;
+  flex-direction: row;
+  min-height: 20rem;
+  max-height: 40rem;
 }
 
-main .col {
-  flex: 1;
-  display: flex;
+main.col{
+  
+  margin: 20px;
+}
+
+main .row .ocean{
+  height : 15rem;
+  width :30rem;
+  margin-bottom: 20px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+main .row .ocean-lg{
+  height : 20rem;
+  width : 30rem;
+  margin-bottom: 20px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+main .row .ocean-md{
+  height : 15rem;
+  width : 28rem;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+main .row .col .graph{
+  height: 35rem;
+  width: 60rem;
+  border-radius: 10px;
+}
+
+main .col{
   flex-direction: column;
-  gap: 20px;
 }
 
-/* Placeholder blocks */
-main .row .col .row,
-main .row .row {
-  background-color: var(--white);
-  border: 1px solid var(--light-border);
-  padding: 30px;
-  border-radius: 12px;
-  text-align: center;
-  font-size: 18px;
-  color: var(--text-tertiary);
-  min-height: 120px;
-  box-shadow: 0 4px 8px rgba(76, 53, 251, 0.05);
-}
+/* form section */
 
 form {
   display: flex;
@@ -216,6 +245,17 @@ main > div > button:hover {
     margin-bottom: 1rem;
 }
 
+.footer{
+  position: relative;
+  left: 0;
+  bottom: 0;
+  height: 3rem;
+  background-color: var(--primary-color);
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem 0rem;
+}
+
 
 .add-btn {
   margin-top: 10px;
@@ -266,19 +306,72 @@ main > div > button:hover {
     color: var(--text-color-tertiary);
     min-width: 110px;
   }
-}
 
+  main {
+    padding: 20px;
+  }
 
-
-/* Responsive design */
-@media (max-width: 900px) {
   main .row {
     flex-direction: column;
+    align-items: center;
+  }
+
+  main .col {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main .row .ocean{
+    display: none;
+  }
+  
+  main .row .ocean-lg,
+  main .row .ocean-md,
+  main .row .col .graph {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    margin-bottom: 20px;
+  }
+
+  .gutter {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .navOption {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 40px;
+    background-color: var(--white);
+    width: 200px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+
+  .navOption.active {
+    display: block;
   }
 
   .navOption ul {
     flex-direction: column;
     gap: 10px;
-    align-items: flex-end;
+    padding: 20px;
+  }
+
+  .navOption li {
+    padding: 10px 0;
   }
 }
+
+
+
+

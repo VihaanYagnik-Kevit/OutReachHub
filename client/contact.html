@@ -9,47 +9,27 @@
 
 <body>
     <nav>
-        <div class="solgan">
-            OutHub-Reach
+        <div class="solgan">OutReachHub</div>
+        <div class="hamburger" id="hamburger">
+            &#9776;
         </div>
-        <div class="navOption">
+        <div class="navOption" id="navMenu">
             <ul>
-                <a href="./index.html">
-                    <li>
-                        Home
-                    </li>
-                </a>
-                <a href="./contact.html">
-                    <li>
-                        Contacts
-                    </li>
-                </a>
-                <a href="./message.html">
-                    <li>
-                        Message Templates
-                    </li>
-                </a>
-                <a href="./campaign.html">
-                    <li>
-                        Campaign
-                    </li>
-                </a>
-                <a href="../auth/signin.html">
-                    <li>
-                        Logout
-                    </li>
-
-                </a>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./contact.html">Contacts</a></li>
+                <li><a href="./message.html">Message Templates</a></li>
+                <li><a href="./campaign.html">Campaign</a></li>
+                <li><a href="../auth/signin.html">Logout</a></li>
             </ul>
         </div>
     </nav>
     <main>
         <div class="big">Contact Page</div>
         <div>
-            <form action="POST">
-                <label for="search">Search for records</label>
-                <input type="text" name="" id="search">
-                <select name="" id="options">
+            <form action="POST" id="contactForm">
+                <label for="searchContact">Search for records</label>
+                <input type="text" name="" id="searchContact">
+                <select name="" id="contactOptions">
                     <option value="Name">Name</option>
                     <option value="Tags">Tags</option>
                     <option value="Phone">Phone</option>
@@ -61,7 +41,77 @@
                     Search
                 </button>
             </form>
-            <button>Add +</button>
+            <button id="add-contact">Add +</button>
+
+            <div class="modal" id="modal">
+                <div class="formCard">
+                    <form id="contact-form" action="POST">
+                        <h2>Add New Contact</h2>
+
+                        <label for="companyContact">Company</label>
+                        <input type="text" id="companyContact" required>
+
+                        <label for="nameContact">Name</label>
+                        <input type="text" id="nameContact" required>
+
+                        <label for="tagsContact">Tags</label>
+                        <input type="text" id="tagsContact" required>
+
+                        <label for="phoneContact">Phone</label>
+                        <input type="text" id="phoneContact" required>
+
+                        <label for="emailContact">Email</label>
+                        <input type="text" id="emailContact" required>
+
+                        <label for="jobContact">Job Title</label>
+                        <input type="text" id="jobContact" required>
+
+                        <label for="workspaceContact">Workspace</label>
+                        <input type="text" id="workspaceContact" required>
+
+                        <div class="form-actions">
+                            <button type="submit" id="saveContact">Save</button>
+                            <button type="button" id="close-modal">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="modal" id="editmodal">
+                <div class="formCard">
+                    <form id="contact-form-edit" action="POST">
+                        <h2>Edit Contact</h2>
+
+                        <label for="companyContactEdit">Company</label>
+                        <input type="text" id="companyContactEdit" required>
+
+                        <label for="nameContactEdit">Name</label>
+                        <input type="text" id="nameContactEdit" required>
+
+                        <label for="tagsContactEdit">Tags</label>
+                        <input type="text" id="tagsContactEdit" required>
+
+                        <label for="phoneContactEdit">Phone</label>
+                        <input type="text" id="phoneContactEdit" required>
+
+                        <label for="emailContactEdit">Email</label>
+                        <input type="text" id="emailContactEdit" required>
+
+                        <label for="jobContactEdit">Job Title</label>
+                        <input type="text" id="jobContactEdit" required>
+
+                        <label for="workspaceContactEdit">Workspace</label>
+                        <input type="text" id="workspaceContactEdit" required>
+
+                        <div class="form-actions">
+                            <button type="submit" id="editContact">Edit</button>
+                            <button type="button" id="close-modalEdit">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
         </div>
         <table id="contact-table" class="table">
             <thead>
@@ -73,7 +123,6 @@
                     <th>Email</th>
                     <th>Job Title</th>
                     <th>Workspace</th>
-                    <th>isConverted</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -86,7 +135,6 @@
                     <td data-label="Email">jane.doe@acme.com</td>
                     <td data-label="Job Title">Marketing Manager</td>
                     <td data-label="Workspace">North America Sales</td>
-                    <td data-label="isConverted">Yes</td>
                     <td data-label="Actions"><button>Edit</button><button>Delete</button></td>
                 </tr>
                 <tr>
@@ -97,7 +145,6 @@
                     <td data-label="Email">john.smith@globex.com</td>
                     <td data-label="Job Title">Sales Executive</td>
                     <td data-label="Workspace">Europe Outreach</td>
-                    <td data-label="isConverted">No</td>
                     <td data-label="Actions"><button>Edit</button><button>Delete</button></td>
                 </tr>
                 <tr>
@@ -108,7 +155,6 @@
                     <td data-label="Email">alice.j@initech.com</td>
                     <td data-label="Job Title">Product Manager</td>
                     <td data-label="Workspace">Product Launch</td>
-                    <td data-label="isConverted">Yes</td>
                     <td data-label="Actions"><button>Edit</button><button>Delete</button></td>
                 </tr>
                 <tr>
@@ -119,7 +165,6 @@
                     <td data-label="Email">bob.lee@hooli.com</td>
                     <td data-label="Job Title">DevOps Engineer</td>
                     <td data-label="Workspace">Engineering Hub</td>
-                    <td data-label="isConverted">No</td>
                     <td data-label="Actions"><button>Edit</button><button>Delete</button></td>
                 </tr>
                 <tr>
@@ -130,7 +175,6 @@
                     <td data-label="Email">elaine@vandelay.com</td>
                     <td data-label="Job Title">Creative Director</td>
                     <td data-label="Workspace">Design Team</td>
-                    <td data-label="isConverted">Yes</td>
                     <td data-label="Actions"><button>Edit</button><button>Delete</button></td>
                 </tr>
                 <tr>
@@ -141,7 +185,6 @@
                     <td data-label="Email">tony@starkindustries.com</td>
                     <td data-label="Job Title">CEO</td>
                     <td data-label="Workspace">Executive Circle</td>
-                    <td data-label="isConverted">Yes</td>
                     <td data-label="Actions"><button>Edit</button><button>Delete</button></td>
                 </tr>
                 <tr>
@@ -152,7 +195,6 @@
                     <td data-label="Email">bruce@wayneenterprises.com</td>
                     <td data-label="Job Title">Chairman</td>
                     <td data-label="Workspace">Investor Relations</td>
-                    <td data-label="isConverted">No</td>
                     <td data-label="Actions"><button>Edit</button><button>Delete</button></td>
                 </tr>
                 <tr>
@@ -163,7 +205,6 @@
                     <td data-label="Email">willy@wonka.com</td>
                     <td data-label="Job Title">Product Innovator</td>
                     <td data-label="Workspace">Product Team</td>
-                    <td data-label="isConverted">No</td>
                     <td data-label="Actions"><button>Edit</button><button>Delete</button></td>
                 </tr>
                 <tr>
@@ -174,7 +215,6 @@
                     <td data-label="Email">richard@piedpiper.com</td>
                     <td data-label="Job Title">Founder & CTO</td>
                     <td data-label="Workspace">Tech Outreach</td>
-                    <td data-label="isConverted">Yes</td>
                     <td data-label="Actions"><button>Edit</button><button>Delete</button></td>
                 </tr>
                 <tr>
@@ -185,12 +225,10 @@
                     <td data-label="Email">sarah.connor@cyberdyne.com</td>
                     <td data-label="Job Title">Security Analyst</td>
                     <td data-label="Workspace">Compliance Team</td>
-                    <td data-label="isConverted">No</td>
                     <td data-label="Actions"><button>Edit</button><button>Delete</button></td>
                 </tr>
             </tbody>
         </table>
-
     </main>
     <footer>
         <div class="footer">
@@ -199,6 +237,8 @@
             </p>
         </div>
     </footer>
+    <script src="./script.js"></script>
+    <script src="./contactCRUD.js"></script>
 </body>
 
 </html>

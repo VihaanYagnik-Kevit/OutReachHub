@@ -1,3 +1,30 @@
+async function fetchContacts() {
+    const res = await fetch('https://6874d57add06792b9c95705b.mockapi.io/api/v1/Contact');
+    const contacts = await res.json();
+
+    contactTbody.innerHTML = ''; // Clear existing
+
+    contacts.forEach(contact => {
+        const row = document.createElement('tr');
+        row.setAttribute('data-id', contact.id);
+        row.innerHTML = `
+            <td data-label="Company">${contact.Company}</td>
+            <td data-label="Names">${contact.Name}</td>
+            <td data-label="Tags">${contact.Tags}</td>
+            <td data-label="Phone">${contact.Phone}</td>
+            <td data-label="Email">${contact.Email}</td>
+            <td data-label="Job Title">${contact.JobTitle}</td>
+            <td data-label="Workspace">${contact.Workspace}</td>
+            <td data-label="Actions"><button>Edit</button><button>Delete</button></td>
+        `;
+        contactTbody.appendChild(row);
+    });
+}
+
+window.addEventListener('DOMContentLoaded', fetchContacts);
+
+
+
 //filter-contact-table-start
 const contactInput = document.getElementById("searchContact");
 const contactType = document.getElementById("contactOptions");
@@ -70,7 +97,7 @@ window.addEventListener('click', (e) => {
     }
 });
 
-addContact.addEventListener('submit', function (e) {
+addContact.addEventListener('submit', async function (e) {
     e.preventDefault();
 
     const company = document.getElementById('companyContact').value
@@ -81,8 +108,25 @@ addContact.addEventListener('submit', function (e) {
     const job = document.getElementById('jobContact').value
     const workspace = document.getElementById('workspaceContact').value
 
+    const data = {
+        Name: name,
+        Tags: tags,
+        Phone: phone,
+        Email: email,
+        JobTitle: job,
+        Workspace: workspace
+    }
+
 
     const row = document.createElement('tr')
+
+    const res = await fetch('https://6874d57add06792b9c95705b.mockapi.io/api/v1/Contact', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
 
     row.innerHTML = `
                 <td data-label="Company">${company}</td>
@@ -96,15 +140,21 @@ addContact.addEventListener('submit', function (e) {
     `
     contactTbody.appendChild(row);
     modal.style.display = 'none'
+
+
     addContact.reset()
 })
 //form-modal-end
 
 //deleting row for contact-start
-contactTbody.addEventListener('click', function (e) {
+contactTbody.addEventListener('click', async function (e) {
     if (e.target.tagName === 'BUTTON' && e.target.textContent === 'Delete') {
         let row = e.target.closest('tr')
+        let id = row.getAttribute('data-id')
         if (confirm('are you sure you want to delete')) {
+            await fetch(`https://6874d57add06792b9c95705b.mockapi.io/api/v1/Contact/${id}`, {
+                method: 'DELETE'
+            });
             row.remove()
         }
     }
@@ -119,6 +169,7 @@ const editBtn = document.getElementById('editContact')
 contactTbody.addEventListener('click', function (e) {
     if (e.target.tagName === 'BUTTON' && e.target.textContent === 'Edit') {
         let row = e.target.closest('tr')
+        let id = row.getAttribute('data-id')
         console.log(row)
 
         const company = row.querySelector('[data-label = "Company"]').textContent
@@ -141,7 +192,7 @@ contactTbody.addEventListener('click', function (e) {
 
         editmodal.style.display = 'flex';
 
-        editBtn.addEventListener('click', function (e) {
+        editBtn.addEventListener('click', async function (e) {
             e.preventDefault()
 
             const company = document.getElementById('companyContactEdit').value
@@ -153,6 +204,16 @@ contactTbody.addEventListener('click', function (e) {
             const workspace = document.getElementById('workspaceContactEdit').value
 
             console.log(company)
+
+            const data = {
+                Name: name,
+                Tags: tags,
+                Phone: phone,
+                Email: email,
+                JobTitle: job,
+                Workspace: workspace,
+                Avatar : ''
+            }
 
             row.innerHTML = `
                 <td data-label="Company">${company}</td>
@@ -166,6 +227,14 @@ contactTbody.addEventListener('click', function (e) {
             `
 
             editmodal.style.display = 'none'
+
+            await fetch(`https://6874d57add06792b9c95705b.mockapi.io/api/v1/Contact/${id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
         })
     }
 })

@@ -14,7 +14,7 @@ if (loginForm) {
 
     const res = await fetch('https://6874d57add06792b9c95705b.mockapi.io/api/v1/login');
     let data = await res.json();
-
+    
     const found = data.filter(function (item) {
       return item.email === email.value && item.password === password.value;
     });

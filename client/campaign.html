@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campaigns</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <nav>
+        <div class="solgan">OutReachHub</div>
+        <div class="hamburger" id="hamburger">
+            &#9776;
+        </div>
+        <div class="navOption" id="navMenu">
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./contact.html">Contacts</a></li>
+                <li><a href="./message.html">Message Templates</a></li>
+                <li><a href="./campaign.html">Campaign</a></li>
+                <li><a href="../index.html">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="big">Campaign module</div>
+
+        <div>
+            <form action="POST" id="campaignForm">
+                <label for="campaignSearch">Search Campaigns</label>
+                <input type="text" id="campaignSearch" placeholder="Enter name or tag..." />
+                 <select id="campaignFilter">
+                    <option value="name">Campaign Name</option>
+                    <option value="tags">Target Tags</option>
+                    <option value="startDate">Sart Date</option>
+                    <option value="endDate">End Date</option>
+                    <option value="workspace">Workspace</option>
+                </select>
+                <select id="statusFilter">
+                    <option value="All">All</option>
+                    <option value="Active">Active</option>
+                    <option value="Completed">Completed</option>
+                    <option value="Draft">Draft</option>
+                </select>
+                <button type="submit">Search</button>
+            </form>
+            <button class="add-btn" id="add-campaign">Add Campaign +</button>
+        </div>
+        
+        <div class="modal" id="modal">
+            <div class="formCard">
+                <form id="campaignAdd" action="POST">
+                    <h2>Add New Campaign</h2>
+
+                    <label for="name">Campaign Name</label>
+                    <input type="text" id="name" required>
+
+                    <label for="tags">Target Tags</label>
+                    <input type="text" id="tags" required>
+
+                    <label for="startDate">Start-Date</label>
+                    <input type="date" id="startDate" required>
+
+                    <label for="endDate">End-Date</label>
+                    <input type="date" id="endDate" required>
+
+                    <label for="workspace">Workspace</label>
+                    <input type="text" id="workspace" required>
+
+                    <div class="form-actions">
+                        <button type="submit" id="saveContact">Save</button>
+                        <button type="button" id="close-modal">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="modal" id="editmodal">
+            <div class="formCard">
+                <form id="campaignEdit" action="POST">
+                    <h2>Edit Campaign</h2>
+
+                    <label for="nameEdit">Campaign Name</label>
+                    <input type="text" id="nameEdit" required>
+
+                    <label for="tagsEdit">Target Tags</label>
+                    <input type="text" id="tagsEdit" required>
+
+                    <label for="startDateEdit">Start-Date</label>
+                    <input type="date" id="startDateEdit" required>
+
+                    <label for="endDateEdit">End-Date</label>
+                    <input type="date" id="endDateEdit" required>
+
+                    <label for="workspaceEdit">Workspace</label>
+                    <input type="text" id="workspaceEdit" required>
+
+                    <div class="form-actions">
+                        <button type="submit" id="saveContact">Save</button>
+                        <button type="button" id="closeModalEdit">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <table id="campaign-table" class="table">
+            <thead>
+                <tr>
+                    <th>Campaign Name</th>
+                    <th>Status</th>
+                    <th>Target Tags</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Workspace</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <div class="footer">
+            <p>
+                <span class="big">OutReachHub</span> @2025
+            </p>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+    <script src="./campaignCRUD.js"></script>
+</body>
+
+</html>

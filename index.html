@@ -1,10 +1,45 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In</title>
+  <link rel="stylesheet" href="./auth/style.css" />
 </head>
+
 <body>
-    
+  <div class="container">
+    <div class="col">
+      <div class="row">
+        <div class="hero">
+          <div class="small">Welcome back</div>
+          <div class="big">Sign In to Continue</div>
+          <div class="small">
+            Don't have an account?
+            <a href="./auth/signup.html">Register</a>
+          </div>
+        </div>
+      </div>
+      <form action="POST" id="loginForm">
+        <div class="row">
+          <label for="email">E-Mail</label>
+          <input type="email" name="email" id="email" placeholder="ok@ok.com" />
+        </div>
+        <div class="row">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" placeholder="okok"/>
+        </div>
+        <div class="row">
+          <button class="big" id="loginSubmit" type="submit">Login</button>
+        </div>
+      </form>
+    </div>
+    <div class="col">
+      <img class="img" src="./assets/signin.png" alt="Sign in graphic" />
+    </div>
+  </div>
+  <script src="./auth/script.js"></script>
 </body>
+
 </html>

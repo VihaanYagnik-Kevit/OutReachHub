@@ -7,7 +7,6 @@ const password = document.getElementById('password');
 const cpassword = document.getElementById('confirmPassword');
 const username = document.getElementById('username');
 
-// Login Form Handler
 if (loginForm) {
   loginForm.addEventListener('submit', async function (e) {
     e.preventDefault();
@@ -20,7 +19,7 @@ if (loginForm) {
     });
 
     if (found.length > 0) {
-      window.location.href = '../client/index.html';
+      window.location.href = './client/index.html';
     } else {
       alert("Invalid username or password");
     }
@@ -60,7 +59,7 @@ if (signupForm) {
       const result = await res.json();
       console.log('Signup successful:', result);
       alert('Signup successful! Please log in.');
-      window.location.href = './signin.html';
+      window.location.href = '../index.html';
     } catch (err) {
       console.error(err);
       alert('Something went wrong during signup.');

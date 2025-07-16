@@ -155,7 +155,7 @@ contactTbody.addEventListener('click', async function (e) {
             await fetch(`https://6874d57add06792b9c95705b.mockapi.io/api/v1/Contact/${id}`, {
                 method: 'DELETE'
             });
-            row.remove()
+        row.remove()
         }
     }
 })
